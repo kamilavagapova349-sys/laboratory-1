@@ -1,1 +1,22 @@
+# Файлы среды разработки
+.idea/
+.vscode/
+Debug/
+Release/
 
+# Зависимости и кэш
+node_modules/
+venv/
+.venv/
+__pycache__/
+*.pyc
+.target/
+
+# Конфиденциальные данные
+.env
+.env.*
+*.local
+
+# Временные файлы
+*.tmp
+*.log
