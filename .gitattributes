@@ -1,0 +1,13 @@
+# Автоматическая обработка текстовых файлов
+* text=auto eol=lf
+
+# Бинарные изображения
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+
+# Архивы
+*.zip binary
+*.rar binary
