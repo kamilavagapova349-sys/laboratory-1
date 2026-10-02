@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlamourEssence | Магазин косметики</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Шапка магазина -->
+        <header class="store-header">
+            <div class="store-logo">
+                <i class="fas fa-crown"></i>
+                <div>
+                    <h1>GlamourEssence</h1>
+                    <p class="store-tagline">Премиальная косметика с доставкой</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="icon-btn" id="cartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Приветствие -->
+        <section class="welcome-banner">
+            <h2>Привет, <span id="userName">клиент</span>! 👋</h2>
+            <p>Сегодня скидка <span class="highlight">15%</span> на все средства по уходу за кожей</p>
+        </section>
+
+        <!-- Категории товаров -->
+        <section class="categories-section">
+            <h2><i class="fas fa-list"></i> Категории</h2>
+            <div class="categories-grid">
+                <button class="category-card" data-category="bodycare">
+                    <i class="fas fa-spa"></i>
+                    <span>Уход за телом</span>
+                </button>
+                <button class="category-card" data-category="handcare">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <span>Уход за руками</span>
+                </button>
+                <button class="category-card" data-category="footcare">
+                    <i class="fas fa-shoe-prints"></i>
+                    <span>Уход за стопами</span>
+                </button>
+                <button class="category-card" data-category="cream">
+                    <i class="fas fa-pump-soap"></i>
+                    <span>Кремы</span>
+                </button>
+                <button class="category-card" data-category="lotion">
+                    <i class="fas fa-tint"></i>
+                    <span>Молочко</span>
+                </button>
+                <button class="category-card" data-category="new">
+                    <i class="fas fa-star"></i>
+                    <span>Новинки</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Быстрые фильтры -->
+        <section class="quick-filters">
+            <h3><i class="fas fa-filter"></i> Быстрые фильтры</h3>
+            <div class="filters-grid">
+                <button class="filter-btn" data-filter="bestseller">
+                    <i class="fas fa-fire"></i> Хиты
+                </button>
+                <button class="filter-btn" data-filter="discount">
+                    <i class="fas fa-percentage"></i> Со скидкой
+                </button>
+                <button class="filter-btn" data-filter="new">
+                    <i class="fas fa-bolt"></i> Новинки
+                </button>
+                <button class="filter-btn" data-filter="cheap">
+                    <i class="fas fa-wallet"></i> До 300₽
+                </button>
+            </div>
+        </section>
+
+        <!-- Популярные товары -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2><i class="fas fa-fire"></i> Популярное сейчас</h2>
+                <a href="#" class="view-all">Все товары →</a>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Товары загрузятся через JavaScript -->
+                <div class="product-card">
+                    <div class="product-badge">ХИТ</div>
+                    <div class="product-image">
+                        <span style="font-size: 40px;">🥛</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Молочко для рук и тела</h3>
+                        <p class="product-aroma">перец, амбра, нероли</p>
+                        <div class="product-price">
+                            <span class="price">500 ₽</span>
+                            <span class="volume">250 мл</span>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-cart-plus"></i> В корзину
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">-10%</div>
+                    <div class="product-image">
+                        <span style="font-size: 40px;">🦶</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Крем для стоп Talaris</h3>
+                        <p class="product-aroma">нейтральный</p>
+                        <div class="product-price">
+                            <span class="price-old">320 ₽</span>
+                            <span class="price">288 ₽</span>
+                            <span class="volume">75 мл</span>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-cart-plus"></i> В корзину
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">НОВИНКА</div>
+                    <div class="product-image">
+                        <span style="font-size: 40px;">🧴</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Крем для рук</h3>
+                        <p class="product-aroma">нежный цветочный</p>
+                        <div class="product-price">
+                            <span class="price">240 ₽</span>
+                            <span class="volume">100 мл</span>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-cart-plus"></i> В корзину
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image">
+                        <span style="font-size: 40px;">💅</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Крем-финиш для рук</h3>
+                        <p class="product-aroma">маракуйя, персик, сандал</p>
+                        <div class="product-price">
+                            <span class="price">500 ₽</span>
+                            <span class="volume">50 мл</span>
+                        </div>
+                        <button class="add-to-cart-btn">
+                            <i class="fas fa-cart-plus"></i> В корзину
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Акция -->
+        <section class="promo-section">
+            <div class="promo-card">
+                <div class="promo-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="promo-content">
+                    <h3><i class="fas fa-percentage"></i> Специальное предложение!</h3>
+                    <p>При первой покупке - промокод <strong>GLAMOUR20</strong></p>
+                    <p class="promo-small">Скидка 20% на первый заказ</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Корзина (скрытая) -->
+        <div class="cart-overlay" id="cartOverlay">
+            <div class="cart-sidebar">
+                <div class="cart-header">
+                    <h3><i class="fas fa-shopping-cart"></i> Ваша корзина</h3>
+                    <button class="close-cart" id="closeCartBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="cart-items" id="cartItems">
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-basket"></i>
+                        <p>Ваша корзина пуста</p>
+                        <small>Добавьте товары из каталога</small>
+                    </div>
+                </div>
+                
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <span>Итого:</span>
+                        <span class="total-price">0 ₽</span>
+                    </div>
+                    <button class="checkout-btn" id="checkoutBtn">
+                        <i class="fas fa-lock"></i> Оформить заказ
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Нижнее меню -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" id="homeBtn">
+                <i class="fas fa-home"></i>
+                <span>Магазин</span>
+            </button>
+            <button class="nav-btn" id="catalogBtn">
+                <i class="fas fa-th-large"></i>
+                <span>Каталог</span>
+            </button>
+            <button class="nav-btn" id="favoritesBtn">
+                <i class="fas fa-heart"></i>
+                <span>Избранное</span>
+            </button>
+            <button class="nav-btn" id="ordersBtn">
+                <i class="fas fa-box"></i>
+                <span>Заказы</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
